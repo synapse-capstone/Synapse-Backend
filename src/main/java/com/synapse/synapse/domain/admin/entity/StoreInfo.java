@@ -1,5 +1,6 @@
 package com.synapse.synapse.domain.admin.entity;
 
+import com.synapse.synapse.domain.order.entity.Order;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -34,5 +35,9 @@ public class StoreInfo extends BaseEntity {
     //월별 매출
     @OneToMany(mappedBy = "storeInfo", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MonthlySales> monthlySales = new ArrayList<>();
+
+    //주문 (매장은 여러 주문을 가질수 있음)
+    @OneToMany(mappedBy = "storeInfo",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
 
 }
