@@ -1,5 +1,6 @@
 package com.synapse.synapse.domain.admin.entity;
 
+import com.synapse.synapse.domain.menu.entity.Menu;
 import com.synapse.synapse.domain.user.model.UserType;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
@@ -39,5 +40,8 @@ public class  Admin extends BaseEntity {
 
     @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true )
     private List<StoreInfo> stores = new ArrayList<>();
+
+    @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Menu> menus = new ArrayList<>();
 
 }
