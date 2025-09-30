@@ -11,6 +11,7 @@ import lombok.*;
 @Entity
 @Getter
 @Builder
+@Table(name = "orders")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Order extends BaseEntity {
@@ -24,17 +25,19 @@ public class Order extends BaseEntity {
     @JoinColumn(name ="storeId", nullable = false)
     private StoreInfo storeInfo;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
+
     //한사용자 - 동시주문 가능
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", nullable = false)
     private User user;
 
-    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderType orderType;
 
-    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status;
