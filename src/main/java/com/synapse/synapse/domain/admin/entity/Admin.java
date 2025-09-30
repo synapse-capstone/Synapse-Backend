@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -33,5 +36,8 @@ public class  Admin extends BaseEntity {
             message = "비밀번호는 최소 1개의 숫자와 1개의 특수문자를 포함해야 합니다."
     )
     private String password;
+
+    @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true )
+    private List<StoreInfo> stores = new ArrayList<>();
 
 }
