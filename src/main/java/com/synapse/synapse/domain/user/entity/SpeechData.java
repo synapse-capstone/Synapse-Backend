@@ -1,6 +1,5 @@
-package com.synapse.synapse.domain.speechdata.entity;
+package com.synapse.synapse.domain.user.entity;
 
-import com.synapse.synapse.domain.user.entity.User;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

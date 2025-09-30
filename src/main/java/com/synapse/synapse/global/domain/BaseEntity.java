@@ -1,4 +1,4 @@
-package com.synapse.synapse.global.entity;
+package com.synapse.synapse.global.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
