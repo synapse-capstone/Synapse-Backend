@@ -2,6 +2,7 @@ package com.synapse.synapse.domain.order.entity;
 
 import com.synapse.synapse.domain.order.model.PaymentMethod;
 import com.synapse.synapse.domain.order.model.PaymentStatus;
+import com.synapse.synapse.domain.order.model.PaymentType;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,6 +28,10 @@ public class Payment extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    private PaymentType paymentType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
@@ -34,5 +39,5 @@ public class Payment extends BaseEntity {
     private PaymentStatus paymentStatus;
 
     @Column(nullable = false)
-    private Date paymentDate = new Date();
+    private Date paymentTime= new Date();
 }
