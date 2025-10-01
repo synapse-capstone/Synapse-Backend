@@ -27,7 +27,10 @@ public class  Admin extends BaseEntity {
     @Column(nullable = false, length = 25)
     private UserType userType = UserType.ADMIN;
 
-    @Column(nullable = false, length = 50 )
+    @Column(nullable = false, length = 50)
+    private String storeName;
+
+    @Column(nullable = false, length = 100)
     @Email
     private String email;
 
