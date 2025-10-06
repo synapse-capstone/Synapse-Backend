@@ -16,12 +16,16 @@ public class SpeechData extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Lob //제약 없는 txt
+    @Column(nullable = false)
+    private String speechText;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id",unique=true)
     private User user;
 
-    @Lob
-    @Column(nullable = false)
-    private String speechText;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="qrUser_id",unique = true)
+    private CreateQRUser createQRUser;
 
 }

@@ -15,12 +15,12 @@ public class OptionItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // optionItemId
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "option_category_id", nullable = false)
     private OptionCategory optionCategory;
 
     @Column(nullable = false, length = 50)
-    private String name;
+    private String optionItemName;
 
     @Column(nullable = false)
     private Integer price;

@@ -1,5 +1,6 @@
 package com.synapse.synapse.domain.admin.entity;
 
+import com.synapse.synapse.domain.admin.model.StoreType;
 import com.synapse.synapse.domain.menu.entity.Menu;
 import com.synapse.synapse.domain.user.model.UserType;
 import com.synapse.synapse.global.domain.BaseEntity;
@@ -27,7 +28,14 @@ public class  Admin extends BaseEntity {
     @Column(nullable = false, length = 25)
     private UserType userType = UserType.ADMIN;
 
-    @Column(nullable = false, length = 50 )
+    @Column(nullable = false, length = 50)
+    private String storeName;
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    private StoreType storeType;
+
+    @Column(nullable = false, length = 100)
     @Email
     private String email;
 
