@@ -31,7 +31,7 @@ public class Payment extends BaseEntity {
     private PaymentType paymentType;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)

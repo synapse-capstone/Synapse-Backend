@@ -21,18 +21,15 @@ public class CreateQRUser {
 
     //QR 생성 App 설치시 자동 생성되는 UUID
     @Column(unique = true, nullable = false)
-    private String uuid;
+    private String deviceUUID;
 
     //복원용 - 전화번호 인증 선택사항
     @Column(unique = true)
     private String phoneNumber;
 
     @Builder.Default
-    @Column
+    @Column(nullable = false)
     private boolean isPhoneVerified = false;
-
-    //인증 번호
-    private String verificationCode;
 
     @OneToOne(mappedBy = "qrUser", fetch = FetchType.LAZY, cascade =  CascadeType.ALL, orphanRemoval = true)
     private SpeechData speechData;

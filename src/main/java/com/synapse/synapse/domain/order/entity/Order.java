@@ -21,16 +21,16 @@ public class Order extends BaseEntity {
     private Long id;
 
     //매장 정보 (하나의 가게는 여러 주문을 가질 수 있음)
-    @ManyToOne(fetch =  FetchType.LAZY)
+    @ManyToOne(fetch =  FetchType.LAZY, optional = false)
     @JoinColumn(name ="storeId", nullable = false)
     private StoreInfo storeInfo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "payment_id")
     private Payment payment;
 
     //한사용자 - 동시주문 가능
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "userId", nullable = false)
     private User user;
 

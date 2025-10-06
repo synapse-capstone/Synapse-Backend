@@ -15,7 +15,7 @@ public class MonthlySales extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name ="store_id",nullable = false)
     private StoreInfo storeInfo;
 
