@@ -1,6 +1,7 @@
-package com.synapse.synapse.domain.admin.entity;
+package com.synapse.synapse.domain.admin;
 
-import com.synapse.synapse.domain.admin.model.StoreType;
+import com.synapse.synapse.domain.admin.dashboard.entity.StoreInfo;
+import com.synapse.synapse.domain.admin.signup.model.StoreType;
 import com.synapse.synapse.domain.menu.entity.Menu;
 import com.synapse.synapse.domain.user.model.UserType;
 import com.synapse.synapse.global.domain.BaseEntity;

@@ -1,4 +1,4 @@
-package com.synapse.synapse.domain.admin.model;
+package com.synapse.synapse.domain.admin.signup.model;
 
 import lombok.Getter;
 

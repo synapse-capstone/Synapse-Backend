@@ -1,6 +1,6 @@
 package com.synapse.synapse.domain.menu.entity;
 
-import com.synapse.synapse.domain.admin.entity.Admin;
+import com.synapse.synapse.domain.admin.Admin;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
