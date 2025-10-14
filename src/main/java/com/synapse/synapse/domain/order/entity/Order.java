@@ -1,6 +1,6 @@
 package com.synapse.synapse.domain.order.entity;
 
-import com.synapse.synapse.domain.admin.entity.StoreInfo;
+import com.synapse.synapse.domain.admin.dashboard.entity.StoreInfo;
 import com.synapse.synapse.domain.order.model.OrderType;
 import com.synapse.synapse.domain.order.model.Status;
 import com.synapse.synapse.domain.user.entity.User;

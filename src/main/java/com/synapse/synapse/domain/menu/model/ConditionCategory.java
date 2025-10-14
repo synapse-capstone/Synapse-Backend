@@ -18,6 +18,6 @@ public enum ConditionCategory {
         for (ConditionCategory c : values()) {
             if (c.getDisplayName().equals(displayName)) return c;
         }
-        throw new IllegalStateException("Unknown group name: " + displayName); //NotFoundException 예외처리
+        throw new IllegalStateException(": " + displayName); //NotFoundException 예외처리
     }
 }
