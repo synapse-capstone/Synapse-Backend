@@ -34,10 +34,12 @@ public class StoreInfo extends BaseEntity {
     private Float salesGrowthRate; //증가율
 
     //월별 매출
+    @Builder.Default
     @OneToMany(mappedBy = "storeInfo", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MonthlySales> monthlySales = new ArrayList<>();
 
     //주문 (매장은 여러 주문을 가질수 있음)
+    @Builder.Default
     @OneToMany(mappedBy = "storeInfo",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
 

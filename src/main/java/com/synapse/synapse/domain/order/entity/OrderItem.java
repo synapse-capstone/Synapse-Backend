@@ -36,6 +36,7 @@ public class OrderItem {
     @Column(nullable = false, length = 500)
     private String optionInfo;
 
+    @Builder.Default
     @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItemOption> orderItemOptions = new ArrayList<>();
 

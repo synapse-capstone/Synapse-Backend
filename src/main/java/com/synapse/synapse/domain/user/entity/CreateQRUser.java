@@ -34,6 +34,7 @@ public class CreateQRUser {
     @OneToOne(mappedBy = "qrUser", fetch = FetchType.LAZY, cascade =  CascadeType.ALL, orphanRemoval = true)
     private SpeechData speechData;
 
+    @Builder.Default
     @OneToMany(mappedBy = "qrUser", cascade = CascadeType.ALL)
     private List<Order> orders = new ArrayList<>();
 }

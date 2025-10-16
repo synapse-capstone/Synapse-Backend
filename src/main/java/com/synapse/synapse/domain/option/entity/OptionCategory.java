@@ -30,6 +30,7 @@ public class OptionCategory {
     @Column(nullable = false, length = 50)
     private String name;
 
+    @Builder.Default
     @OneToMany(mappedBy = "optionCategory", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OptionItem> optionItems = new ArrayList<>();
 }

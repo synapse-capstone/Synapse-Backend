@@ -3,6 +3,7 @@ package com.synapse.synapse.domain.order.entity;
 import com.synapse.synapse.domain.admin.dashboard.entity.StoreInfo;
 import com.synapse.synapse.domain.order.model.OrderType;
 import com.synapse.synapse.domain.order.model.Status;
+import com.synapse.synapse.domain.user.entity.CreateQRUser;
 import com.synapse.synapse.domain.user.entity.User;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
@@ -31,8 +32,12 @@ public class Order extends BaseEntity {
 
     //한사용자 - 동시주문 가능
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "qr_user_id")
+    private CreateQRUser qrUser;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

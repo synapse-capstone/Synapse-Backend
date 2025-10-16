@@ -47,9 +47,11 @@ public class  Admin extends BaseEntity {
     )
     private String password;
 
+    @Builder.Default
     @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true )
     private List<StoreInfo> stores = new ArrayList<>();
 
+    @Builder.Default
     @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Menu> menus = new ArrayList<>();
 
