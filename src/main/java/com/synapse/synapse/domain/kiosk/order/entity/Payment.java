@@ -1,8 +1,8 @@
-package com.synapse.synapse.domain.order.entity;
+package com.synapse.synapse.domain.kiosk.order.entity;
 
-import com.synapse.synapse.domain.order.model.PaymentMethod;
-import com.synapse.synapse.domain.order.model.PaymentStatus;
-import com.synapse.synapse.domain.order.model.PaymentType;
+import com.synapse.synapse.domain.kiosk.order.model.PaymentMethod;
+import com.synapse.synapse.domain.kiosk.order.model.PaymentStatus;
+import com.synapse.synapse.domain.kiosk.order.model.PaymentType;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

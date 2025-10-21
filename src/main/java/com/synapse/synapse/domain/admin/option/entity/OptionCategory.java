@@ -1,8 +1,8 @@
-package com.synapse.synapse.domain.option.entity;
+package com.synapse.synapse.domain.admin.option.entity;
 
 
 import com.synapse.synapse.domain.admin.Admin;
-import com.synapse.synapse.domain.menu.entity.Menu;
+import com.synapse.synapse.domain.admin.menu.entity.Menu;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.*;

@@ -1,6 +1,6 @@
 package com.synapse.synapse.domain.user.entity;
 
-import com.synapse.synapse.domain.order.entity.Order;
+import com.synapse.synapse.domain.kiosk.order.entity.Order;
 import jakarta.persistence.*;
 import lombok.*;
 

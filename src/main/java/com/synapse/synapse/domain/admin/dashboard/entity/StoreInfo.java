@@ -1,7 +1,7 @@
 package com.synapse.synapse.domain.admin.dashboard.entity;
 
 import com.synapse.synapse.domain.admin.Admin;
-import com.synapse.synapse.domain.order.entity.Order;
+import com.synapse.synapse.domain.kiosk.order.entity.Order;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

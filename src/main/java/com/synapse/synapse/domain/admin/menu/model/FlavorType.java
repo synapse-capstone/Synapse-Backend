@@ -1,4 +1,4 @@
-package com.synapse.synapse.domain.menu.model;
+package com.synapse.synapse.domain.admin.menu.model;
 
 import lombok.Getter;
 

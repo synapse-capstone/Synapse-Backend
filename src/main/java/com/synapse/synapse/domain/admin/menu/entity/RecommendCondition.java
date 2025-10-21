@@ -1,8 +1,8 @@
-package com.synapse.synapse.domain.menu.entity;
+package com.synapse.synapse.domain.admin.menu.entity;
 
 import com.synapse.synapse.domain.admin.Admin;
-import com.synapse.synapse.domain.menu.model.ConditionCategory;
-import com.synapse.synapse.domain.menu.registry.ConditionValueRegistry;
+import com.synapse.synapse.domain.admin.menu.model.ConditionCategory;
+import com.synapse.synapse.domain.admin.menu.registry.ConditionValueRegistry;
 import jakarta.persistence.*;
 import lombok.*;
 

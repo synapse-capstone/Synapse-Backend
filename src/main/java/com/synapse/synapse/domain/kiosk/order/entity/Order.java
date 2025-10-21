@@ -1,8 +1,8 @@
-package com.synapse.synapse.domain.order.entity;
+package com.synapse.synapse.domain.kiosk.order.entity;
 
 import com.synapse.synapse.domain.admin.dashboard.entity.StoreInfo;
-import com.synapse.synapse.domain.order.model.OrderType;
-import com.synapse.synapse.domain.order.model.Status;
+import com.synapse.synapse.domain.kiosk.order.model.OrderType;
+import com.synapse.synapse.domain.kiosk.order.model.Status;
 import com.synapse.synapse.domain.user.entity.CreateQRUser;
 import com.synapse.synapse.domain.user.entity.User;
 import com.synapse.synapse.global.domain.BaseEntity;

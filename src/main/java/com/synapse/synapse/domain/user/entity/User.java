@@ -1,6 +1,6 @@
 package com.synapse.synapse.domain.user.entity;
 
-import com.synapse.synapse.domain.order.entity.Order;
+import com.synapse.synapse.domain.kiosk.order.entity.Order;
 import com.synapse.synapse.domain.user.model.UserType;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;

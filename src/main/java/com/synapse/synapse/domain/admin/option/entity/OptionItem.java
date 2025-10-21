@@ -1,4 +1,4 @@
-package com.synapse.synapse.domain.option.entity;
+package com.synapse.synapse.domain.admin.option.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

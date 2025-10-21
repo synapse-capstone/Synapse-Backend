@@ -1,4 +1,4 @@
-package com.synapse.synapse.domain.menu.entity;
+package com.synapse.synapse.domain.admin.menu.entity;
 
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
