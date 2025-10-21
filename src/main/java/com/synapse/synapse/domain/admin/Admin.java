@@ -1,8 +1,9 @@
 package com.synapse.synapse.domain.admin;
 
 import com.synapse.synapse.domain.admin.dashboard.entity.StoreInfo;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.entity.KioskMenu;
+import com.synapse.synapse.domain.admin.qrcode_management.entity.QrcodeMenuCategory;
 import com.synapse.synapse.domain.admin.signup.model.StoreType;
-import com.synapse.synapse.domain.admin.kiosk_management.menu.entity.Menu;
 import com.synapse.synapse.domain.user.model.UserType;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
@@ -53,6 +54,10 @@ public class  Admin extends BaseEntity {
 
     @Builder.Default
     @OneToMany(mappedBy = "admin", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Menu> menus = new ArrayList<>();
+    private List<KioskMenu> kioskMenus = new ArrayList<>();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<QrcodeMenuCategory> qrcodeCategories = new ArrayList<>();
 
 }

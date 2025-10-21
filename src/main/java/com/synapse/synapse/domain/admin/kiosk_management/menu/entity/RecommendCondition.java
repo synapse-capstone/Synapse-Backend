@@ -3,6 +3,8 @@ package com.synapse.synapse.domain.admin.kiosk_management.menu.entity;
 import com.synapse.synapse.domain.admin.Admin;
 import com.synapse.synapse.domain.admin.kiosk_management.menu.model.ConditionCategory;
 import com.synapse.synapse.domain.admin.kiosk_management.menu.registry.ConditionValueRegistry;
+import com.synapse.synapse.global.domain.BaseEntity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +14,7 @@ import lombok.*;
 @Table(name="recommend_condition")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class RecommendCondition {
+public class RecommendCondition extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

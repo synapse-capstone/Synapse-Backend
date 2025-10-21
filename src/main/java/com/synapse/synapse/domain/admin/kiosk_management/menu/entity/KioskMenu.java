@@ -1,6 +1,11 @@
 package com.synapse.synapse.domain.admin.kiosk_management.menu.entity;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.synapse.synapse.domain.admin.Admin;
+import com.synapse.synapse.domain.admin.kiosk_management.option.entity.OptionCategory;
 import com.synapse.synapse.global.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,10 +13,10 @@ import lombok.*;
 @Entity
 @Getter
 @Builder
-@Table(name = "menu")
+@Table(name = "kiosk_menu")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Menu extends BaseEntity {
+@AllArgsConstructor
+public class KioskMenu extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +31,11 @@ public class Menu extends BaseEntity {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "menu_name", nullable = false, length = 50)
     private String menuName;
 
     @Column(nullable = false)
-    private Integer price;
+    private BigDecimal price;
 
     @Column(nullable = false, length = 1000)
     private String description;
@@ -45,6 +50,10 @@ public class Menu extends BaseEntity {
     @Builder.Default
     @Column(nullable = false)
     private boolean isDeleted = false; //soft delete
+
+    @OneToMany(mappedBy = "kioskMenu", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<OptionCategory> optionCategories = new ArrayList<>();
 
     //qrCodeUrl
 

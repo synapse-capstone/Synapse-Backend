@@ -1,5 +1,7 @@
 package com.synapse.synapse.domain.admin.kiosk_management.option.entity;
 
+import com.synapse.synapse.global.domain.BaseEntity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,7 +11,7 @@ import lombok.*;
 @Table(name = "option_item")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class OptionItem {
+public class OptionItem extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

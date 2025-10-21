@@ -1,6 +1,9 @@
 package com.synapse.synapse.domain.kiosk.order.entity;
 
-import com.synapse.synapse.domain.admin.kiosk_management.menu.entity.Menu;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.entity.KioskMenu;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.model.PlatformType;
+import com.synapse.synapse.domain.admin.qrcode_management.entity.QrcodeMenu;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,8 +27,16 @@ public class OrderItem {
     private Order order;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "menu_id", nullable = false)
-    private Menu menu;
+    @JoinColumn(name = "kiosk_menu_id")
+    private KioskMenu kioskMenu;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "qrcode_menu_id")
+    private QrcodeMenu qrcodeMenu;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private PlatformType platformType;
 
     @Column(nullable = false)
     private Integer quantity;
