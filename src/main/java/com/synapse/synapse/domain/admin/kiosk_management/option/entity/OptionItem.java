@@ -1,4 +1,4 @@
-package com.synapse.synapse.domain.admin.option.entity;
+package com.synapse.synapse.domain.admin.kiosk_management.option.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

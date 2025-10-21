@@ -1,8 +1,8 @@
-package com.synapse.synapse.domain.admin.menu.registry;
+package com.synapse.synapse.domain.admin.kiosk_management.menu.registry;
 
-import com.synapse.synapse.domain.admin.menu.model.FlavorType;
-import com.synapse.synapse.domain.admin.menu.model.MoodType;
-import com.synapse.synapse.domain.admin.menu.model.TemperatureType;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.model.FlavorType;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.model.MoodType;
+import com.synapse.synapse.domain.admin.kiosk_management.menu.model.TemperatureType;
 
 import java.util.*;
 
