@@ -21,7 +21,7 @@ public class QrcodeService {
 
 	public List<FindAllQrcodeMenu> getQrMenusForStore(String storeName) {
 
-		List<QrcodeMenu> menus  = qrcodeRepository.findQrMenusByStoreName(storeName);
+		List<QrcodeMenu> menus = qrcodeRepository.findQrMenusByStoreName(storeName);
 
 		return menus.stream()
 			.map(FindAllQrcodeMenu::fromEntity)

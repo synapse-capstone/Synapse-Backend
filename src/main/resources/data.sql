@@ -104,3 +104,4 @@ INSERT INTO qrcode_menu (
 
 SELECT * FROM admin;
 SELECT * FROM option_item;
+SELECT * FROM qrcode_menu;
