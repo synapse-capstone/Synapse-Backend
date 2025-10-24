@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.5.5'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'jacoco'
 }
 
 group = 'com.synapse'
@@ -13,6 +14,12 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
+
+// Jacoco Coverage Report
+jacoco {
+	toolVersion = "0.8.13"
+}
+
 
 configurations {
 	compileOnly {
@@ -71,6 +78,39 @@ def findQClassPatterns() {
 			}
 
 	return excludedPatterns
+}
+
+// Jacoco 제외 항목 추가
+def createFilteredClassDirectories() {
+	def defaultExcludedPatterns = [
+			'**/SynapseApplication.class',   // Spring Boot 메인 클래스
+			'**/global/config/**',           // config 패키지
+			'**/global/exception/**',        // 예외 핸들러 패키지
+			'**/global/dto/**',              // DTO
+			'**/global/model/**',            // 커스텀 예외 클래스 등
+			'**/domain/**/model/**'          // 도메인 모델(enum 등)
+	]
+
+	return sourceSets.main.output.classesDirs.files.collect { dirPath ->
+		fileTree(
+				dir: dirPath,
+				excludes: defaultExcludedPatterns + findQClassPatterns()
+		)
+	}
+}
+
+jacocoTestReport {
+	dependsOn test
+
+	afterEvaluate {
+		classDirectories.setFrom(files(createFilteredClassDirectories()))
+	}
+
+	reports {
+		xml.required = true
+		csv.required = false
+		html.outputLocation = layout.buildDirectory.dir('reports/jacoco/html')
+	}
 }
 
 tasks.named('test') {
